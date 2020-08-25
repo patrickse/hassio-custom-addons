@@ -28,7 +28,7 @@ if bashio::fs.file_exists "${CONF}"; then
 fi
 
 if bashio::config.false 'validate_cert'; then
-    bashio:log.info "Disabling validation of camera certificates..."
+    bashio::log.info "Disabling validation of camera certificates..."
     sed -i "s/validate_cert true/validate_cert false/" "$CONF"
 fi
 
