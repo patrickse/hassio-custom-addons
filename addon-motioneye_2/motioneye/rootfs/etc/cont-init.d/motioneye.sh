@@ -27,7 +27,7 @@ if bashio::fs.file_exists "${CONF}"; then
             /usr/lib/python2.7/site-packages/motioneye/scripts/migrateconf.sh {} \;
 fi
 
-if bashio::config.false 'validate_cert'; then
+if bashio::config.false 'validate_certs'; then
     bashio::log.info "Disabling validation of camera certificates..."
     sed -i "s/validate_certs true/validate_certs false/" "$CONF"
 fi
